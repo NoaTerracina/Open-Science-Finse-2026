@@ -19,7 +19,7 @@ install.packages("palmerpenguins")
 ```
 
 ```{r}
-#| label: load the data
+#| label: load the data and shwom the data structure
 #| echo: true
 #| include: true
 
