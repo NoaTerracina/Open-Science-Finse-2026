@@ -16,7 +16,7 @@ install.packages("palmerpenguins")
 ```
 
 ```{r}
-#| label: load the data
+#| label: load the data and show me as well how the data looks like
 #| include: false 
 
 # Load the package and dataset
