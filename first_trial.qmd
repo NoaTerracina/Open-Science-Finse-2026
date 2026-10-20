@@ -1,0 +1,9 @@
+---
+title: "First trial"
+author: "Noa Terracina"
+format: html
+editor: visual
+date: 20.10.2026
+---
+
+## Test for the open science course in Finse, Norway, 2026
