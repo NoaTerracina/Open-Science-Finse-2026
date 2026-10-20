@@ -8,8 +8,6 @@ date: 20 10 2026
 
 ## Test for the open science course in Finse, Norway, 2026
 
-I'm trying doing some changes here
-
 ```{r}
 #| label: install the data
 #| eval: false
@@ -18,17 +16,63 @@ I'm trying doing some changes here
 install.packages("palmerpenguins")
 ```
 
+The libraries I will use are the following:
+
 ```{r}
-#| label: load the data and shwo the data structure
-#| echo: true
-#| include: true
+#| label: load the packages
+#| include: false
 
-# Load the package and dataset
+library(ggplot2)
+library(dplyr)
 library(palmerpenguins)
-data("penguins")
-
-# Inspect the data
-head(penguins)
-summary(penguins)
-
 ```
+
+Example of a bad but very simple function:
+
+```{r}
+f <- function(){}
+```
+
+### Testing a function
+
+Writing a code I should run every time for a different species
+
+```{r}
+penguins
+
+penguins |> 
+  filter(species == species) |> 
+  ggplot(aes(x = body_mass, y = bill_len)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(x = "Body mass g", y = "Bill length mm", title = "Gentoo")
+```
+
+Building a function, which run the same plot for different species
+
+```{r}
+filter_spp = function(data, species) {
+  data |> 
+  filter(species == {{species}}) |>  # double bracket because the name of the column is the same as the argument of the function
+    ggplot(aes(x = body_mass, y = bill_len)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    labs(x = "Body mass g", y = "Bill length mm", title = "Gentoo")
+}
+
+p <- filter_spp(penguins, "Adelie")
+p
+```
+
+```{r}
+buggy <- function(x){
+  x <- as.charachter(x)
+  log(x)
+}
+
+g <- function(x)buggy(x)
+buggy(1)
+g(1)
+```
+
+`traceback()` to search were the bug is
