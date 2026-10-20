@@ -3,21 +3,25 @@ title: "First trial"
 author: "Noa Terracina"
 format: html
 editor: visual
-date: 20.10.2026
+date: 20 10 2026
 ---
 
 ## Test for the open science course in Finse, Norway, 2026
 
+I'm trying doing some changes here
+
 ```{r}
 #| label: install the data
-#| eval: false 
+#| eval: false
+#| include: false
 
 install.packages("palmerpenguins")
 ```
 
 ```{r}
-#| label: load the data and show me as well how the data looks like
-#| include: false 
+#| label: load the data and shwo the data structure
+#| echo: true
+#| include: true
 
 # Load the package and dataset
 library(palmerpenguins)
