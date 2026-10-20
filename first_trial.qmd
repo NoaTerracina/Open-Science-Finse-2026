@@ -10,14 +10,16 @@ date: 20 10 2026
 
 ```{r}
 #| label: install the data
-#| eval: false 
+#| eval: false
+#| include: false
 
 install.packages("palmerpenguins")
 ```
 
 ```{r}
 #| label: load the data
-#| include: false 
+#| echo: true
+#| include: true
 
 # Load the package and dataset
 library(palmerpenguins)
