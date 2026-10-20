@@ -7,3 +7,24 @@ date: 20.10.2026
 ---
 
 ## Test for the open science course in Finse, Norway, 2026
+
+```{r}
+#| label: install the data
+#| eval: false 
+
+install.packages("palmerpenguins")
+```
+
+```{r}
+#| label: load the data
+#| include: false 
+
+# Load the package and dataset
+library(palmerpenguins)
+data("penguins")
+
+# Inspect the data
+head(penguins)
+summary(penguins)
+
+```
